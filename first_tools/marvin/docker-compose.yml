@@ -1,0 +1,11 @@
+version:  '3.0'
+services:
+  jenkins:
+    ports:
+      - "8080:8080"
+    build: .
+    env_file:
+      - .env
+    image: jenkins/jenkins-casc:lts
+    volumes:
+      - ./my_marvin.yml:/var/jenkins_casc.yml
